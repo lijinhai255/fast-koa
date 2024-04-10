@@ -4,11 +4,14 @@
   "description": "开箱即用koa",
   "main": "test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon test.js"
   },
   "author": "lijinhai255 <976041476@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "koa": "^2.15.2"
+    "koa": "^2.15.2",
+    "koa-router": "^12.0.1",
+    "require-directory": "^2.1.1"
   }
 }
