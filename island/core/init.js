@@ -7,6 +7,7 @@ class InitManger {
     InitManger.app = app;
     //入口方法
     InitManger.initLoadRouters();
+    InitManger.loadConfig();
   }
   static initLoadRouters() {
     const basePath = `${process.cwd()}/app/api`;
@@ -18,6 +19,11 @@ class InitManger {
         InitManger.app.use(obj.routes());
       }
     }
+  }
+  static loadConfig() {
+    const configPath = `${process.cwd()}/config/config.js`;
+    const config = require(configPath);
+    global.config = config;
   }
 }
 
