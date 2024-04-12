@@ -9,9 +9,9 @@ const catchError = async (ctx, next) => {
     const isHttpException = error instanceof HttpException;
     const isDev = global.config.environment === "dev";
     console.log(isDev && !isHttpException, "isDev && !isHttpException");
-    // if (isDev && !isHttpException) {
-    //   throw error;
-    // }
+    if (isDev && !isHttpException) {
+      throw error;
+    }
     // 生成环境
     if (isHttpException) {
       ctx.body = {
