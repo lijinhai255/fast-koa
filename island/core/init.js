@@ -8,6 +8,7 @@ class InitManger {
     //入口方法
     InitManger.initLoadRouters();
     InitManger.loadConfig();
+    InitManger.loadHttpException();
   }
   static initLoadRouters() {
     const basePath = `${process.cwd()}/app/api`;
@@ -24,6 +25,10 @@ class InitManger {
     const configPath = `${process.cwd()}/config/config.js`;
     const config = require(configPath);
     global.config = config;
+  }
+  static loadHttpException() {
+    const errors = require("./http-exception");
+    global.errs = errors;
   }
 }
 
